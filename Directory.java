@@ -103,13 +103,13 @@ public class Directory {
 			} else {
 			// if similar (but not equal)
 				if (contacts.get(i).email.matches
-					("(.*)"+quest+"(.*)") ||
+					("(?i).*"+quest+".*") ||
 					contacts.get(i).fname.matches
-					("(.*)"+quest+"(.*)") ||
+					("(?i).*"+quest+".*") ||
 					contacts.get(i).lname.matches
-					("(.*)"+quest+"(.*)") ||
+					("(?i).*"+quest+".*") ||
 					contacts.get(i).phone.matches
-					("(.*)"+quest+"(.*)")  ) {
+					("(?i).*"+quest+".*")  ) {
 					// add index of contact w/ quest to end of found
 					found.add(i);
 				}
