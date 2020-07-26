@@ -7,13 +7,5 @@ supports functions that enable adding, removing, querying and saving records
 
 
 
-
-
-
-
-
-
-
-
 ### phonebook
 an implementation of the directory data structure
