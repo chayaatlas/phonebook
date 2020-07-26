@@ -5,7 +5,6 @@ data specified: first name, last name, email address, and phone number
 
 supports functions that enable adding, removing, querying and saving records
 
-/n/n
 
 ## phonebook
 an implementation of the directory data structure
