@@ -93,24 +93,25 @@ public class Directory {
 	// determines which contacts (if any) contains "quest"
 	private ArrayList<Integer> search(String quest) {
 		ArrayList<Integer> found = new ArrayList<Integer>(5);
-		for (int i = 0; i < contacts.size(); i++) {
-			if (contacts.get(i).email.equalsIgnoreCase(quest) ||
-				contacts.get(i).fname.equalsIgnoreCase(quest) ||
-				contacts.get(i).lname.equalsIgnoreCase(quest)||
-				contacts.get(i).phone.equalsIgnoreCase(quest)) {
-				// add index of contact w/ quest to beginning of found
-				found.add(0,i);
-			} else {
-			// if similar (but not equal)
-				if (contacts.get(i).email.matches
-					("(?i).*"+quest+".*") ||
-					contacts.get(i).fname.matches
-					("(?i).*"+quest+".*") ||
-					contacts.get(i).lname.matches
-					("(?i).*"+quest+".*") ||
-					contacts.get(i).phone.matches
-					("(?i).*"+quest+".*")  ) {
-					// add index of contact w/ quest to end of found
+		for (int i = 0; i < contacts.size(); i++) { // for each contact
+			// if quest is similar to this contact
+			if (contacts.get(i).email.matches
+				("(?i).*"+quest+".*") ||
+				contacts.get(i).fname.matches
+				("(?i).*"+quest+".*") ||
+				contacts.get(i).lname.matches
+				("(?i).*"+quest+".*") ||
+				contacts.get(i).phone.matches
+				("(?i).*"+quest+".*")  ) {
+				// if they are equal
+				if (contacts.get(i).email.equalsIgnoreCase(quest) ||
+					contacts.get(i).fname.equalsIgnoreCase(quest) ||
+					contacts.get(i).lname.equalsIgnoreCase(quest)||
+					contacts.get(i).phone.equalsIgnoreCase(quest)) {
+					// add index of contact to beginning of found
+					found.add(0,i);
+				} else { // if they are similar (but not equal)
+					// add index of contact to the end of found
 					found.add(i);
 				}
 			}
